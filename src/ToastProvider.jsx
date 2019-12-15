@@ -115,6 +115,7 @@ class ToastProvider extends Component {
 
     render() {
         const {
+            // eslint-disable-next-line react/prop-types
             context: Context = ToastContext,
             children,
         } = this.props;

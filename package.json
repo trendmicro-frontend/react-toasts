@@ -4,13 +4,12 @@
   "description": "React Toasts",
   "main": "lib/index.js",
   "files": [
-    "dist",
     "lib"
   ],
   "scripts": {
     "prepare": "npm run lint && npm test && npm run clean && npm run build && npm run styleguide:build",
     "build": "webpack-cli",
-    "clean": "rm -f {lib,dist}/*",
+    "clean": "rm -f {lib}/*",
     "demo": "http-server -p 8000 docs/",
     "lint": "npm run eslint && npm run stylint",
     "eslint": "eslint --ext .js --ext .jsx *.js src test",
@@ -39,8 +38,9 @@
   },
   "homepage": "https://github.com/trendmicro-frontend/react-toasts",
   "keywords": [
+    "react-toasts",
     "react",
-    "react-toasts"
+    "toasts"
   ],
   "peerDependencies": {
     "react": ">=16.3.0"
