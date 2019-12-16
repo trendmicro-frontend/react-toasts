@@ -24,6 +24,8 @@ Demo: https://trendmicro-frontend.github.io/react-toasts
 
 Wrap your app in `ToastProvider`, which provides context to the consuming components that are descendants of the `ToastProvider`.
 
+### Context
+
 ```jsx
 import { ToastProvider, ToastConsumer } from '@trendmicro/react-toast';
 
@@ -64,9 +66,9 @@ const App = () => (
 );
 ```
 
-## Higher-Order Component
+### Higher-Order Component
 
-### withToast
+#### withToast
 
 You can get access to the toast via the `withToast` higher-order component. `withToast` will pass updated `toast` props to the wrapped component whenever it renders.
 
@@ -82,9 +84,9 @@ const Component = ({
 const EnhancedComponent = withToast(Component);
 ```
 
-## Hook
+### Hook
 
-### useToast
+#### useToast
 
 The `useToast` hook returns an object where you can render toast notifications or manipulate the toast.
 
@@ -119,22 +121,63 @@ const { toasts, hasToast, addToast, removeToast, removeAllToasts, updateToast } 
 The `hasToast` method returns a boolean value that indicates if the toast exists.
 - `id` The id to check whether a toast exists.
 
+```js
+if (hasToast(toast.id)) {
+    console.log(`The toast exists (${id}).`);
+} else {
+    console.log(`The toast does not exist (${id}).`);
+}
+```
+
 #### `addToast(content, [meta], [callback])`
 - `content` The content of the toast, which can be any renderable content.
 - `[meta]` An optional user-defined meta data associated with the toast.
 - `[callback]` An optional callback, which is passed the added toast id.
 
+```js
+addToast('Settings saved.', { type: 'success' }, id => {
+    console.log(`Added a new toast (${id}).`);
+});
+```
+
 #### `removeToast(id, [callback])`
 - `id` The id of the toast to remove.
 - `[callback]` An optional callback, which is passed the removed toast id.
 
+```js
+removeToast(toast.id, id => {
+    console.log(`Removed a toast (${id}).`);
+});
+```
+
 #### `removeAllToasts([callback])`
 - `[callback]` An optional callback.
+
+```js
+removeAllToasts(() => {
+    console.log(`Removed all toasts.');
+});
+```
 
 #### `updateToast(id, updater, [callback])`
 - `id` The id of the toast to update.
 - `updater` An updater function that takes the matched toast as the first argument and returns an updated toast.
 - `[callback]` An optional callback, which is passed the updated toast id.
+
+```js
+updateToast(toast.id, (toast) => ({
+    ...toast,
+    content: (
+        <div>Updated content.</div>
+    ),
+    meta: {
+        ...toast.meta,
+        updatedTime: Date.now(),
+    }
+}), id => {
+    console.log(`Updated a toast (${id}).`);
+});
+```
 
 ## License
 

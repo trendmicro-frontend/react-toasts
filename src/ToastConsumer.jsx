@@ -7,7 +7,13 @@ const ToastConsumer = ({
     children,
 }) => (
     <Context.Consumer>
-        {context => ((typeof children === 'function') ? children(context) : children)}
+        {context => {
+            if (!context) {
+                throw new Error('The `ToastConsumer` component must be called from a descendent of the `ToastProvider`.');
+            }
+
+            return (typeof children === 'function') ? children(context) : children;
+        }}
     </Context.Consumer>
 );
 
