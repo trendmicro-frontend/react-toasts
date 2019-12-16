@@ -8,7 +8,7 @@ You can also use the **children as a function** to pass methods and properties t
 
 ```jsx static
 <ToastProvider>
-    {({ add, remove, removeAll, update, toasts }) => (
+    {({ hasToast, addToast, removeToast, removeAllToasts, updateToast, toasts }) => (
         <App />
     )}
 </ToastProvider>

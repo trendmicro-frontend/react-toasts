@@ -1,3 +1,7 @@
+Wrap your app in `ToastProvider`, which provides context to the consuming components that are descendants of the `ToastProvider`.
+
+## Context
+
 ```jsx
 const Toasts = () => (
     <ToastConsumer>
@@ -38,4 +42,32 @@ const content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eg
         </>
     )}
 </ToastProvider>
+```
+
+## Higer-Order Component
+
+### withToast
+
+You can get access to the toast via the `withToast` higher-order component. `withToast` will pass updated `toast` props to the wrapped component whenever it renders.
+
+```jsx static
+const Component = ({
+    toast,
+}) => {
+    const { toasts, hasToast, addToast, removeToast, removeAllToasts, updateToast } = toast;
+
+    return <div>Toast count: {toasts.length}</div>;
+};
+
+const EnhancedComponent = withToast(Component);
+```
+
+## Hook
+
+### useToast
+
+The `useToast` hook returns an object where you can render toast notifications or manipulate the toast.
+
+```jsx static
+const { toasts, hasToast, addToast, removeToast, removeAllToasts, updateToast } = useToast();
 ```

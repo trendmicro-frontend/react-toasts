@@ -2978,17 +2978,13 @@
   !*** ./node_modules/react-styleguidist/lib/client/utils/transpileImports.js ***!
   \******************************************************************************/
 
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/react-styleguidist/lib/loaders/examples-loader.js!./styleguide/examples/API.md ***!
+  \*****************************************************************************************************/
+
 /*!********************************************************************************************************!*\
-  !*** ./node_modules/react-styleguidist/lib/loaders/examples-loader.js!./styleguide/examples/README.md ***!
+  !*** ./node_modules/react-styleguidist/lib/loaders/examples-loader.js!./styleguide/examples/Toasts.md ***!
   \********************************************************************************************************/
-
-/*!******************************************************************************************************!*\
-  !*** ./node_modules/react-styleguidist/lib/loaders/examples-loader.js!./styleguide/examples/hocs.md ***!
-  \******************************************************************************************************/
-
-/*!*******************************************************************************************************!*\
-  !*** ./node_modules/react-styleguidist/lib/loaders/examples-loader.js!./styleguide/examples/hooks.md ***!
-  \*******************************************************************************************************/
 
 /*!***********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/react-styleguidist/lib/loaders/examples-loader.js?displayName=ToastConsumer&file=.%2FToastConsumer.jsx&shouldShowDefaultExample=false!./src/ToastConsumer.md ***!

@@ -1,13 +1,3 @@
-## useToast
-
-The `useToast` hook returns an object where you can render toast notifications or manipulate the toast.
-
-```jsx static
-const { toasts, hasToast, addToast, removeToast, removeAllToasts, updateToast } = useToast();
-```
-
-The returned result contains the following properties and methods:
-
 ### Properties
 
 #### `toasts`
@@ -33,19 +23,60 @@ The returned result contains the following properties and methods:
 The `hasToast` method returns a boolean value that indicates if the toast exists.
 - `id` The id to check whether a toast exists.
 
+```js static
+if (hasToast(toast.id)) {
+    console.log(`The toast exists (${id}).`);
+} else {
+    console.log(`The toast does not exist (${id}).`);
+}
+```
+
 #### `addToast(content, [meta], [callback])`
 - `content` The content of the toast, which can be any renderable content.
 - `[meta]` An optional user-defined meta data associated with the toast.
 - `[callback]` An optional callback, which is passed the added toast id.
 
+```js static
+addToast('Settings saved.', { type: 'success' }, id => {
+    console.log(`Added a new toast (${id}).`);
+});
+```
+
 #### `removeToast(id, [callback])`
 - `id` The id of the toast to remove.
 - `[callback]` An optional callback, which is passed the removed toast id.
 
+```js static
+removeToast(toast.id, id => {
+    console.log(`Removed a toast (${id}).`);
+});
+```
+
 #### `removeAllToasts([callback])`
 - `[callback]` An optional callback.
+
+```js static
+removeAllToasts(() => {
+    console.log(`Removed all toasts.');
+});
+```
 
 #### `updateToast(id, updater, [callback])`
 - `id` The id of the toast to update.
 - `updater` An updater function that takes the matched toast as the first argument and returns an updated toast.
 - `[callback]` An optional callback, which is passed the updated toast id.
+
+```js static
+updateToast(toast.id, (toast) => ({
+    ...toast,
+    content: (
+        <div>Updated content.</div>
+    ),
+    meta: {
+        ...toast.meta,
+        updatedTime: Date.now(),
+    }
+}), id => {
+    console.log(`Updated a toast (${id}).`);
+});
+```

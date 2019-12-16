@@ -86,16 +86,12 @@ module.exports = {
     title: `React Toasts v${pkg.version}`,
     sections: [
         {
-            name: 'Getting Started',
-            content: path.resolve(__dirname, 'styleguide/examples/README.md'),
+            name: 'Toasts',
+            content: path.resolve(__dirname, 'styleguide/examples/Toasts.md'),
         },
         {
-            name: 'High-Order Components',
-            content: path.resolve(__dirname, 'styleguide/examples/hocs.md'),
-        },
-        {
-            name: 'Hooks',
-            content: path.resolve(__dirname, 'styleguide/examples/hooks.md'),
+            name: 'API',
+            content: path.resolve(__dirname, 'styleguide/examples/API.md'),
         },
         {
             name: 'Components',
