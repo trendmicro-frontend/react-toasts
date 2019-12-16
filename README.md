@@ -24,6 +24,8 @@ Demo: https://trendmicro-frontend.github.io/react-toasts
 
 Wrap your app in `ToastProvider`, which provides context to the consuming components that are descendants of the `ToastProvider`.
 
+### Context
+
 ```jsx
 import { ToastProvider, ToastConsumer } from '@trendmicro/react-toast';
 
@@ -64,9 +66,9 @@ const App = () => (
 );
 ```
 
-## Higher-Order Component
+### Higher-Order Component
 
-### withToast
+#### withToast
 
 You can get access to the toast via the `withToast` higher-order component. `withToast` will pass updated `toast` props to the wrapped component whenever it renders.
 
@@ -82,9 +84,9 @@ const Component = ({
 const EnhancedComponent = withToast(Component);
 ```
 
-## Hook
+### Hook
 
-### useToast
+#### useToast
 
 The `useToast` hook returns an object where you can render toast notifications or manipulate the toast.
 
